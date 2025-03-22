@@ -22,6 +22,8 @@ o	Mise en évidence du poids de certaines variables comme : Internet Service (fi
 5.	Réseau de Neurones (ANN) Pour aller plus loin, j’ai aussi implémenté un ANN avec :
 o	Deux couches cachées (activation ReLU)
 o	Couche de sortie sigmoid pour une classification binaire
+o	Optimiseur : Adam, fonction de perte : binary_crossentropy
+
 Stack technique :
 •	Frontend : Streamlit
 •	Backend : FastAPI
