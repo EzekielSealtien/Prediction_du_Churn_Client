@@ -33,7 +33,7 @@ Stack technique :
 •	Hébergement sur Heroku
 Code source :
 Démo en ligne :
-•	[Lien de l’application déployée sur Heroku]
+•	
 
 
  
