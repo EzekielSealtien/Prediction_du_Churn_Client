@@ -28,6 +28,7 @@ monthly_charges = st.sidebar.number_input("Monthly Charges", value=89.1)
 total_charges = st.sidebar.number_input("Total Charges", value=1949.4)
 cltv = st.sidebar.number_input("Customer Lifetime Value (CLTV)", value=4459.0)
 
+
 input_data = pd.DataFrame([{
     'Zip Code': zip_code,
     'Gender': 1 if gender == "Male" else 0,
