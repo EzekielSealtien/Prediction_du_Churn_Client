@@ -65,7 +65,7 @@ if st.button("Predict Churn"):
     prediction = response.json()['prediction']
     probability = response.json()['probability']
 
-    if prediction == "churn":
+    if prediction == 1:
         st.error("The customer is likely to churn.")
     else:
         st.success("The customer is not likely to churn.")
