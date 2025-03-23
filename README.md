@@ -31,8 +31,7 @@ Stack technique :
 •	CI/CD : GitHub Actions
 •	Sérialisation avec Joblib
 •	Hébergement sur Heroku
-Code source :
-Démo en ligne :
+Démo en ligne :https://ezekielteneprojectchurn-0f2c7a5b5be7.herokuapp.com/
 
 
  
