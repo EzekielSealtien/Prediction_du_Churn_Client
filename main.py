@@ -59,8 +59,8 @@ st.dataframe(input_data)
 # Predict button
 if st.button("Predict Churn"):
     
-    #response = requests.post("https://ezekielteneprojectchurnbackend-021eb9965ad0.herokuapp.com/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
-    response = requests.post("http://localhost:8500/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
+    response = requests.post("https://ezekielteneprojectchurnbackend-021eb9965ad0.herokuapp.com/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
+    #response = requests.post("http://localhost:8500/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
 
     prediction = response.json()['prediction']
     probability = response.json()['probability']
