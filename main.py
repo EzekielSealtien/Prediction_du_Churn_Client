@@ -14,7 +14,7 @@ dependents = st.sidebar.selectbox("Has Dependents?", ["No", "Yes"])
 tenure_months = st.sidebar.slider("Tenure Months", min_value=0, max_value=100, value=22)
 phone_service = st.sidebar.selectbox("Phone Service", ["No", "Yes"])
 multiple_lines = st.sidebar.selectbox("Multiple Lines", ["No", "Yes"])
-internet_service = st.sidebar.selectbox("Internet Service", ["DSL", "Fiber optic", "No"])
+internet_service = st.sidebar.selectbox("Internet Service", ["Fiber optic","DSL", "No"])
 online_security = st.sidebar.selectbox("Online Security", ["No", "Yes"])
 online_backup = st.sidebar.selectbox("Online Backup", ["No", "Yes"])
 device_protection = st.sidebar.selectbox("Device Protection", ["No", "Yes"])
@@ -24,9 +24,9 @@ streaming_movies = st.sidebar.selectbox("Streaming Movies", ["No", "Yes"])
 contract = st.sidebar.selectbox("Contract Type", ["Month-to-month", "One year", "Two year"])
 paperless_billing = st.sidebar.selectbox("Paperless Billing", ["No", "Yes"])
 payment_method = st.sidebar.selectbox("Payment Method", ["Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"])
-monthly_charges = st.sidebar.number_input("Monthly Charges", value=89.1)
-total_charges = st.sidebar.number_input("Total Charges", value=1949.4)
-cltv = st.sidebar.number_input("Customer Lifetime Value (CLTV)", value=4459.0)
+monthly_charges = st.sidebar.number_input("Monthly Charges", value=99.1)
+total_charges = st.sidebar.number_input("Total Charges", value=820.4)
+cltv = st.sidebar.number_input("Customer Lifetime Value (CLTV)", value=5373.0)
 
 
 input_data = pd.DataFrame([{
@@ -59,13 +59,13 @@ st.dataframe(input_data)
 # Predict button
 if st.button("Predict Churn"):
     
-    response = requests.post("https://ezekielteneprojectchurnbackend-021eb9965ad0.herokuapp.com/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
-    #response = requests.post("http://localhost:8500/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
+    #response = requests.post("https://ezekielteneprojectchurnbackend-021eb9965ad0.herokuapp.com/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
+    response = requests.post("http://localhost:8500/predict", json=input_data.to_dict(orient='records')[0],timeout=20)
 
     prediction = response.json()['prediction']
     probability = response.json()['probability']
 
-    if prediction == 1:
-        st.error("The customer is likely to churn.")
+    if prediction=="Churn":
+        st.error('The customer is likely to churn')
     else:
-        st.success("The customer is not likely to churn.")
+        st.success('The customer is not likely to churn.')
